@@ -1,4 +1,4 @@
-package com.jetbrains.yash.Photoclone;
+package com.jetbrains.yash.Photoclone.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;

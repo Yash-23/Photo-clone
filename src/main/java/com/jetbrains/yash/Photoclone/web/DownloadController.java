@@ -1,7 +1,8 @@
-package com.jetbrains.yash.Photoclone;
+package com.jetbrains.yash.Photoclone.web;
 
+import com.jetbrains.yash.Photoclone.Service.PhotosService;
+import com.jetbrains.yash.Photoclone.model.Photo;
 import org.springframework.http.*;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,8 @@ public class DownloadController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.valueOf(photo.getContentType()));
         ContentDisposition build = ContentDisposition.builder("attachment")
-                .filename(photo.getFileName()).build();
+                .filename(photo.getFileName())
+                .build();
         headers.setContentDisposition(build);
         return new ResponseEntity<>(data, headers, HttpStatus.OK);
     }
