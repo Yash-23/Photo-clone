@@ -24,6 +24,14 @@ public class PhotoController {
     public String hello(){
         return "Hello World";
     }
+    @GetMapping("/user")
+    public String user(){
+        return "Hello, user";
+    }
+    @GetMapping("/admin")
+    public String admin(){
+        return "Hello, admin";
+    }
     @GetMapping("/photos")
     public Collection<Photo> get(){
         return photosService.get();
